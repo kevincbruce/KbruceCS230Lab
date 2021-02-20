@@ -16,8 +16,8 @@ if(isset($_POST["signup-submit"])){
         exit();
     }
     else{
-        $sql = "SELECT uname FROM users WHERE uname=?";
-        $stmt = mysli_stmt_init($conn);
+        $sql = "SELECT uname FROM users WHERE uname=? OR email=?";
+        $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../signup.php?error=SQLInjection");
             exit();
