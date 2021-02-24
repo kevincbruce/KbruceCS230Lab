@@ -3,7 +3,7 @@ if(isset($_POST["signup-submit"])){
 
     require 'dbhandler.php';
 
-    $uname = $_POST['uname-email'];
+    $uname = $_POST['uname - email'];
     $password = $_POST['pwd'];
 
     if(empty($uname) || empty($password)){
