@@ -40,7 +40,7 @@ if(isset($_POST["signup-submit"])){
                 }
                 else{
                     $hashed = password_hash($password, PASSWORD_BCRYPT);
-                    mysqli_stmt_bind_param($stmt, "sssss", $lname, $fname, $email, $username, $password);
+                    mysqli_stmt_bind_param($stmt, "sssss", $lname, $fname, $email, $username, $hashed);
                     mysqli_stmt_execute($stmt);
                     mysqli_stmt_store_result($stmt);
 
