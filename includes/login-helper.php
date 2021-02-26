@@ -3,7 +3,7 @@ if(isset($_POST["login-submit"])){
 
     require 'dbhandler.php';
 
-    $uname = $_POST['uname - email'];
+    $uname = $_POST['uname-email'];
     $password = $_POST['pwd'];
 
     if(empty($uname) || empty($password)){
@@ -36,6 +36,7 @@ if(isset($_POST["login-submit"])){
                 $_SESSION['uname'] = $data['uname'];
 
                 echo "<h1>Success!</h1><p>.$uname.</p>";
+                header("Location: ../profile.php?error=success");
             }
             else{
                 header("Location: ../login.php?error=WrongPassword");

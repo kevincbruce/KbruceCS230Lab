@@ -11,7 +11,7 @@ require "includes/header.php"
                     <form action="includes/login-helper.php" method="post">
                         <h1 class="h3 mb-3 fw-normal">Please Sign In!</h1>
                         <p class="hint-text">Enter your Username and Password</p>
-                        <input type="text" class="form-control" name="uname - email" placeholder="Username/Email" required autofocus>
+                        <input type="text" class="form-control" name="uname-email" placeholder="Username/Email" required autofocus>
                         <input type="password" id="inputPassword" class="form-control" name="pwd" placeholder="Password" required>
                         <div class="checkbox mb-3">
                             <label>
