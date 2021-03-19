@@ -22,16 +22,16 @@ if(isset($_POST['gallery-submit'])){
     $allowed = array('jpg', 'jpeg', 'png', 'svg');
 
     if($file_error !== 0){
-        header("Location ../admin.php?error=UploadError");
+        header("Location: ../admin.php?error=UploadError");
         exit();
     }
 
     if(!in_array($ext, $allowed)){
-        header("Location ../admin.php?error=InvalidType");
+        header("Location: ../admin.php?error=InvalidType");
         exit();
     }
     if($file_size > 4*MB){
-        header("Location ../admin.php?error=FileSizeExceeded");
+        header("Location: ../admin.php?error=FileSizeExceeded");
         exit();
     }
     else{
@@ -51,7 +51,7 @@ if(isset($_POST['gallery-submit'])){
             mysqli_stmt_store_result($stmt);
 
             move_uploaded_file($file_tmp_name, $destination);
-            header("Location ../admin.php?success=GalleryUploadComplete");
+            header("Location: ../admin.php?success=GalleryUploadComplete");
             exit();
         }
 
@@ -60,6 +60,6 @@ if(isset($_POST['gallery-submit'])){
     
 }
 else{
-    header("Location ../admin.php");
+    header("Location: ../admin.php");
     exit();
 }
